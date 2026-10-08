@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "mapled": {
+      "type": "http",
+      "url": "https://api.mapled.io/mcp"
+    }
+  }
+}

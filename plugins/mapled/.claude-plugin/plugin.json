@@ -1,0 +1,12 @@
+{
+  "name": "mapled",
+  "description": "Connect a site to Mapled and keep its content model in step: the Mapled tools and the skill that drives them",
+  "version": "0.1.0",
+  "author": {
+    "name": "Mapled",
+    "url": "https://mapled.io"
+  },
+  "homepage": "https://mapled.io",
+  "license": "MIT",
+  "keywords": ["mapled", "cms", "headless-cms", "content"]
+}

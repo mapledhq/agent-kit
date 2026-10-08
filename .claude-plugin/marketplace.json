@@ -1,0 +1,14 @@
+{
+  "name": "mapled",
+  "description": "Mapled — a headless CMS for sites built with AI",
+  "owner": {
+    "name": "Mapled"
+  },
+  "plugins": [
+    {
+      "name": "mapled",
+      "source": "./plugins/mapled",
+      "description": "Connect a site to Mapled and keep its content model in step: the Mapled tools and the skill that drives them"
+    }
+  ]
+}
