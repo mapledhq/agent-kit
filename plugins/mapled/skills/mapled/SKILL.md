@@ -19,15 +19,15 @@ The command signs in through the browser (the person clicks Authorize — nothin
 
 1. `npx -y @mapled/cli tool get_schema` — what the project already has.
 2. Read the code; find the hardcoded content. Propose one plan: `npx -y @mapled/cli tool propose_setup_plan --input plan.json`.
-3. Give the person the `reviewUrl` as a link; poll `get_setup_run` until it is approved.
-4. `apply_setup_plan`, then wire the site as `get_connection` says. Build, and run `npx -y @mapled/cli doctor`.
+3. Give the person the `reviewUrl` as a link, then wait for their decision in the same turn: `npx -y @mapled/cli tool get_setup_run '{"runId":"<id>"}' --wait` (run it again while the status is `awaiting_approval`). They approve on the Mapled screen, not in the chat: don't end your turn or ask them to tell you they approved.
+4. As soon as it is approved: `apply_setup_plan`, then wire the site as `get_connection` says. Build, and run `npx -y @mapled/cli doctor`.
 5. Ship it, write `MAPLED.md` (`npx -y @mapled/cli md pull`), then `report_setup` and `verify_setup`.
 
 `npx -y @mapled/cli tools` lists every tool. The same tools are available over MCP when this plugin's server is connected.
 
 ## Rules
 
-- Do the work yourself. Never send the person to a terminal, a config file or GitHub; they approve on Mapled screens only.
+- Do the work yourself. Never send the person to a terminal, a config file or GitHub; they approve on Mapled screens only, and that approval is your go-ahead to carry on at once.
 - Never ask for a token, key or secret in the conversation, and never print one.
 - Branches, pull requests and the merge into the branch the site deploys from are yours to do. A prompt copied from Mapled already gives the go-ahead; without one, ask one yes-or-no question before the change reaches the live site.
 - Write everything you put into Mapled for people to read — plan, names, help texts, warnings, report — in English; the site's content stays in the site's language.
