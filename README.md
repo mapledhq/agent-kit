@@ -20,7 +20,7 @@ claude plugin marketplace add mapledhq/agent-kit
 claude plugin install mapled@mapled
 ```
 
-The plugin brings the Mapled MCP server (OAuth in the browser, no token) and the `connect` skill.
+The plugin brings the Mapled MCP server (OAuth in the browser, no token) and the `mapled` skill.
 
 ## MCP server
 

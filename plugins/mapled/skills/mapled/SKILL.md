@@ -1,5 +1,5 @@
 ---
-name: connect
+name: mapled
 description: Connect a website's code to Mapled, a hosted headless CMS for sites built with AI — move hardcoded content into Mapled, wire the site to read it, verify. Use when the user mentions Mapled, asks to connect a CMS to a site built with AI, pastes a prompt that starts "Connect this site to Mapled", or wants the site's texts and images to be editable without code.
 ---
 
