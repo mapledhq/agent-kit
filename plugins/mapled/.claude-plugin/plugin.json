@@ -1,7 +1,6 @@
 {
   "name": "mapled",
   "description": "Connect a site to Mapled and keep its content model in step: the Mapled tools and the skill that drives them",
-  "version": "0.2.0",
   "author": {
     "name": "Mapled",
     "url": "https://mapled.io"
