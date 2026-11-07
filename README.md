@@ -30,6 +30,8 @@ Any client that supports remote MCP servers with OAuth:
 https://api.mapled.io/mcp
 ```
 
+One click: [Add to Cursor](https://cursor.com/en/install-mcp?name=mapled&config=eyJ1cmwiOiJodHRwczovL2FwaS5tYXBsZWQuaW8vbWNwIn0%3D) · [Add to VS Code](https://insiders.vscode.dev/redirect/mcp/install?name=mapled&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fapi.mapled.io%2Fmcp%22%7D) · [Add to VS Code Insiders](https://insiders.vscode.dev/redirect/mcp/install?name=mapled&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fapi.mapled.io%2Fmcp%22%7D&quality=insiders)
+
 In Claude Code: `claude mcp add --transport http mapled https://api.mapled.io/mcp`. For clients without OAuth, the stdio server with a project token: [`@mapled/mcp`](https://www.npmjs.com/package/@mapled/mcp).
 
 ## Packages
