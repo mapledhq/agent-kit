@@ -1,6 +1,6 @@
 ---
 name: mapled
-description: Connect a website's code to Mapled, a hosted headless CMS for sites built with AI — model everything the owner manages (a shop's products, orders and customers, a blog's posts, every form, the hardcoded content), wire the site to it, verify. Use when the user mentions Mapled, asks to connect a CMS to a site built with AI, pastes a prompt that starts "Connect this site to Mapled", or wants the site's texts and images to be editable without code.
+description: Connect a website's code to Mapled, a hosted headless CMS for sites built with AI — model everything the owner manages (a shop's products, orders and customers, a blog's posts, every form, the hardcoded content), wire the site to it, verify. Use when the user mentions Mapled, asks to connect a CMS to a site built with AI, pastes a prompt that starts "Connect this site to Mapled", or wants the site's texts and images to be editable without code — and when they want to stop using Mapled or delete the project but keep the site.
 ---
 
 # Connect a site to Mapled
@@ -29,6 +29,10 @@ The site is set up page by page; `npx -y @mapled/cli tool get_setup '{"setupId":
 6. Once every page is in, build and run `npx -y @mapled/cli doctor`, ship the site once, write `MAPLED.md` (`npx -y @mapled/cli md pull`), then `report_setup` and `verify_setup` with the `setupId`.
 
 `npx -y @mapled/cli tools` lists every tool. The same tools are available over MCP when this plugin's server is connected.
+
+## Leaving Mapled
+
+When the person wants to stop using Mapled or delete the project, take Mapled out of the site's code first, so the site keeps showing what it shows now: `npx -y @mapled/cli tool detach_site` gives the plan. Ask the person about each feature it lists as stopping with the project (forms, sign-in on the site, live data, the support widget, newsletter sign-ups) — remove it, or replace it with something of theirs; never decide for them. Then `npx -y @mapled/cli detach --dry-run` and `npx -y @mapled/cli detach` in the site's repository: the last release and its files go into the repository (media always, don't ask), a local module replaces the SDK, Mapled's packages, routes, variables and files go. Remove nothing of Mapled by hand before it has run. Build the site, compare its pages with the live ones, clean up what `npx -y @mapled/cli detach --check` lists, ship, and report with `npx -y @mapled/cli detach --report --build passed --pages <n>` (add `--removed "Contact form; Newsletter sign-up"` and `--replaced "Booking form → Calendly link"` for what you did with each feature): it also removes `mapled.json`.
 
 ## Rules
 
